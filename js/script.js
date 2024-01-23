@@ -11,7 +11,7 @@ const app = createApp({
                 { id: 4, done: false, text: 'Aggiornare il PC' }
             ],
 
-
+            newTask: '',
         }
     },
 
@@ -19,6 +19,19 @@ const app = createApp({
         deleteTask(id) {
             const updatedTasks = this.tasks.filter((task) => id !== task.id);
             this.tasks = updatedTasks;
+        },
+
+        addNewTask() {
+            const newObjectTask = {
+                id: 5,
+                done: false,
+                text: this.newTask
+            };
+
+            this.tasks.push(newObjectTask);
+
+            this.newTask = '';
+
         }
     }
 
