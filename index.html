@@ -26,8 +26,11 @@
     <div class="container mt-5 d-flex flex-column align-items-center">
       <h1>Cose da fare</h1>
       <ul class="list-group w-50 mt-3">
-        <li v-for="task in tasks" class="list-group-item d-flex justify-content-between">{{task.text}}<button
-            type="button" class="btn-close"></button></li>
+        <li v-for="task in tasks" class="list-group-item d-flex justify-content-between">
+          <span :class="{'text-decoration-line-through': task.done === true}">{{task.text}}</span>
+          <button type="button" class="btn-close">
+          </button>
+        </li>
       </ul>
     </div>
   </div>
