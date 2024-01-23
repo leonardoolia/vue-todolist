@@ -46,8 +46,9 @@
         <!-- Input per aggiungere nuovo task -->
         <li class="list-group-item">
           <div class="input-group">
-            <input type="text" class="form-control" placeholder="Aggiungi task">
-            <button class="btn btn-outline-secondary" type="button" id="button-addon2"><i
+            <input type="text" class="form-control" placeholder="Aggiungi task" v-model.trim="newTask" autofocus
+              @keyup.enter="addNewTask">
+            <button class="btn btn-outline-secondary" type="button" @click="addNewTask"><i
                 class="fas fa-plus"></i></button>
           </div>
         </li>
