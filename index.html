@@ -25,9 +25,13 @@
   <div id="root">
     <div class="container mt-5 d-flex flex-column align-items-center">
       <h1>Cose da fare</h1>
+      <h2 v-show="tasks.length ===0">Non ci sono più cose da fare</h2>
       <ul class="list-group w-50 mt-3">
         <li v-for="task in tasks" class="list-group-item d-flex justify-content-between">
+
           <span :class="{'text-decoration-line-through': task.done === true}">{{task.text}}</span>
+
+
           <button type="button" class="btn-close" @click="deleteTask(task.id)">
           </button>
         </li>
