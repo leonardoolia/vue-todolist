@@ -28,7 +28,7 @@
       <ul class="list-group w-50 mt-3">
         <li v-for="task in tasks" class="list-group-item d-flex justify-content-between">
           <span :class="{'text-decoration-line-through': task.done === true}">{{task.text}}</span>
-          <button type="button" class="btn-close">
+          <button type="button" class="btn-close" @click="deleteTask(task.id)">
           </button>
         </li>
       </ul>
