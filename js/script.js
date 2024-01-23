@@ -1,9 +1,9 @@
 const { createApp } = Vue;
 
 const app = createApp({
-    name: 'ToDo List',
     data() {
         return {
+            name: 'ToDo List',
             tasks: [
                 { id: 1, done: false, text: 'Fare la spesa' },
                 { id: 2, done: true, text: 'Lavare i capelli' },
@@ -11,13 +11,14 @@ const app = createApp({
                 { id: 4, done: false, text: 'Aggiornare il PC' }
             ],
 
-            updatedTasks: []
+
         }
     },
 
     methods: {
         deleteTask(id) {
-            const deletedTasks = this.tasks.splice(id, 1);
+            const updatedTasks = this.tasks.filter((task) => id !== task.id);
+            this.tasks = updatedTasks;
         }
     }
 
